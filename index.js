@@ -13,7 +13,7 @@ const managerQuestions = ()=> {
         {
             type: "input",
             name: "name",
-            message: "Enter the manger's name.",
+            message: "Enter the manager's name.",
             validate: nameInput => {
                 if(nameInput) {
                     return true;
@@ -38,7 +38,7 @@ const managerQuestions = ()=> {
         {
             type: "input",
             name: "email",
-            message: "Enter the manger's email address.",
+            message: "Enter the manager's email address.",
             validate: emailInput => {
                 if(emailInput) {
                     return true
@@ -50,7 +50,7 @@ const managerQuestions = ()=> {
         {
             type: "input",
             name: "officeNumber",
-            message: "Enter the manger's office number.",
+            message: "Enter the manager's office number.",
             validate: numberInput => {
                 if(isNaN(numberInput)) {
                     console.log("Error! Try again!.")
@@ -199,21 +199,11 @@ const writeFile = teamArr => {
 })
 }
 
-const copyFile = () => {
-    fs.copyFile("./src/style.css", "./dist/style.css", err =>{
-        if(err) {throw err
-        } else {
-            console.log("Style sheet copied successfully!")
-        }
-    })
-}
-
 managerQuestions()
     .then(addEmployee)
     .then(teamArr => {
         return writeFile(teamArr)
     })
-    .then(copyFile)
     .catch(err => {
         console.log(err)
     });
