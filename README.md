@@ -13,4 +13,6 @@ SO THAT I have quick access to their emails and GitHub profiles
 - jest
 
 ## Instruction
-To start, run ```npm install```
+To start, run ```npm install```.
+To run unit tests, run ```npm run test```.
+To start the application, run ```node index```.
